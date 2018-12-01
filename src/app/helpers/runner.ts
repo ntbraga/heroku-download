@@ -1,6 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { IdGenerator } from './Helpers';
+import { IdGenerator } from '/helpers';
 
 export class Runner<T> {
     private old: Running<T>[] = [];
