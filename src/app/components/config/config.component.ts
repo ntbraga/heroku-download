@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { scaleUpBl } from 'src/app/helpers/Helpers';
+import { scaleUpBl } from 'src/app/helpers/helpers';
 import { faCog, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

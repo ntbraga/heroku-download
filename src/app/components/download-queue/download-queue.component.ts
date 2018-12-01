@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { QueueService } from 'src/app/services/queue.service';
-import { scaleUpHorRight } from 'src/app/helpers/Helpers';
+import { scaleUpHorRight } from 'src/app/helpers/helpers';
 
 @Component({
   selector: 'app-download-queue',

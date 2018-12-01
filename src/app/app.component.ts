@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NetcineService, Serie, Temporada, Episode } from './services/netcine.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { IdGenerator, enterAnimationRightToLeft } from './helpers/Helpers';
+import { IdGenerator, enterAnimationRightToLeft } from './helpers/helpers';
 import { selectedValues } from './helpers/selecteds';
 import { faTasks, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { QueueService } from './services/queue.service';

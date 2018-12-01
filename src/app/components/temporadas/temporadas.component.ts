@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Serie, NetcineService, Temporada, Episode } from 'src/app/services/netcine.service';
 import { selectedValues } from 'src/app/helpers/selecteds';
-import { IdGenerator } from 'src/app/helpers/Helpers';
+import { IdGenerator } from 'src/app/helpers/helpers';
 
 @Component({
   selector: 'app-temporadas',

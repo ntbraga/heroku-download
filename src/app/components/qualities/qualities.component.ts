@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NetcineService, Episode, Download, Language } from 'src/app/services/netcine.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { IdGenerator } from 'src/app/helpers/Helpers';
+import { IdGenerator } from 'src/app/helpers/helpers';
 import { selectedValues } from 'src/app/helpers/selecteds';
 
 @Component({

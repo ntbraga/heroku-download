@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { scaleInOut } from 'src/app/helpers/Helpers';
+import { scaleInOut } from 'src/app/helpers/helpers';
 
 @Component({
   selector: 'app-fab-queue',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import { breadCrumb } from 'src/app/helpers/Helpers';
+import { breadCrumb } from 'src/app/helpers/helpers';
 
 @Component({
   selector: 'app-breadcrumb',
