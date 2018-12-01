@@ -1,0 +1,7 @@
+<div class="closeable">
+  <span class="close" (click)="closeEvent($event)">x</span>
+  <ul>
+    <li *ngFor="let episode of temporada.episodes" [ngClass]="{ 'active' : selectedValues.selectedEpisode != undefined && selectedValues.selectedEpisode.id == episode.id }"
+      (click)="emitSelected(episode)">{{episode.ep}} - {{episode.text}} ({{episode.duration}})</li>
+  </ul>
+</div>

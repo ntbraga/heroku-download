@@ -1,0 +1,60 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container" [hidden]="selectedValues.selectedDownload != undefined">
+  <form class="input-search input-group">
+    <input type="text" name="query" [(ngModel)]="query" />
+    <button (click)="closeAll(); search()" [disabled]="query == undefined || query == ''" style="border-radius: 0 0 0 0">
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <span>Buscar</span>
+    </button>
+  </form>
+  <div class="content" style="z-index: 0">
+    <ul class *ngIf="series != undefined">
+      <li *ngFor="let serie of series" [ngClass]="{ 'active': selectedValues.selectedSerie != undefined && serie.id == selectedValues.selectedSerie.id }"
+        (click)="closeAll(); onSelectedSerie(serie)">{{serie.text}}</li>
+    </ul>
+  </div>
+
+  <div class="content" style="z-index: 1" *ngIf="selectedValues.selectedSerie != undefined" [@enterAnimation]>
+    <div *ngFor="let serie of series">
+      <div *ngIf="serie.id == selectedValues.selectedSerie.id">
+        <app-temporadas [serie]="serie" (loaded)="selectedValues.selectedSerie.temporadas = $event" (selected)="onSelectedTemporada($event); "
+          (close)="closeTemporada()"></app-temporadas>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" style="z-index: 2" *ngIf="selectedValues.selectedTemporada != undefined" [@enterAnimation]>
+    <div *ngFor="let temporada of selectedValues.selectedSerie.temporadas">
+      <div *ngIf="temporada.id == selectedValues.selectedTemporada.id">
+        <app-episodios [temporada]="selectedValues.selectedTemporada" (close)="selectedValues.selectedTemporada = undefined; selectedValues.selectedEpisode = undefined;"
+          (selected)="onSelectedEpisode($event)"></app-episodios>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" style="z-index: 3" *ngIf="selectedValues.selectedEpisode != undefined" [@enterAnimation]>
+    <div *ngFor="let episodio of selectedValues.selectedTemporada.episodes">
+      <div *ngIf="episodio.id == selectedValues.selectedEpisode.id">
+        <app-languages [episodio]="episodio" (loaded)="selectedValues.selectedEpisode.languages = $event" (close)="selectedValues.selectedEpisode = undefined; selectedValues.selectedTemporada = undefined; selectedValues.selectedEpisode = undefined;"></app-languages>
+      </div>
+    </div>
+  </div>
+  <div class="content" style="z-index: 4" *ngIf="selectedValues.selectedLanguage != undefined" [@enterAnimation]>
+    <div *ngFor="let language of selectedValues.selectedEpisode.languages">
+      <div *ngIf="language.id == selectedValues.selectedLanguage.id">
+        <app-qualities [language]="language" (loaded)="selectedValues.selectedLanguage.downloads = $event" [episode]="selectedValues.selectedEpisode"
+          (close)="selectedValues.selectedLanguage = undefined"></app-qualities>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container closeable" *ngIf="selectedValues.selectedDownload != undefined" [@enterAnimation]>
+  <app-download (queued)="queueVisible = true" [download]="selectedValues.selectedDownload" (close)="selectedValues.selectedDownload = undefined"></app-download>
+</div>
+
+<app-download-queue [visible]="queueVisible" (close)="queueVisible = false"></app-download-queue>
+<app-fab-queue [visible]="queue.runner.hasItems()" (click)="queueVisible = !queueVisible" [state]="queueVisible ? 'side1' : 'side2'" [icon]="queueVisible ? faTimes : faTasks"></app-fab-queue>
+<app-loading></app-loading>
+<app-config></app-config>
+<app-breadcrumb></app-breadcrumb>
+<router-outlet></router-outlet>

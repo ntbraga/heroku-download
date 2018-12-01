@@ -1,0 +1,10 @@
+<div>
+  <button class="arrow rounded" (click)="showConfig = !showConfig">
+      <fa-icon [icon]="showConfig ? faTimes : faCog"></fa-icon>
+  </button>
+  <div class="config" *ngIf="showConfig" [@enterAnimation]>
+    <div>
+      Download simultâneos
+    </div>
+  </div>
+</div>

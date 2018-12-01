@@ -1,0 +1,7 @@
+<div class="closeable">
+  <span class="close" (click)="closeEvent($event)">x</span>
+  <ul>
+    <li *ngFor="let language of episodio.languages" [ngClass]="{ 'active' : selectedValues.selectedLanguage != undefined && selectedValues.selectedLanguage.id == language.id }"
+      (click)="emitSelected(language)">{{language.text}}</li>
+  </ul>
+</div>

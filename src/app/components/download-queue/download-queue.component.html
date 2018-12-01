@@ -1,0 +1,8 @@
+<div [@enterAnimation]="visible ? 'visible' : 'hidden'" class="queue">
+    <div class="current" *ngIf="queue.runner.getCurrent() != undefined">
+        <app-download-progress [download]="queue.runner.getCurrent()"></app-download-progress>
+    </div>
+    <ul>
+        <li *ngFor="let download of queue.runner.getQueue()">{{download.value.text}}</li>
+    </ul>
+</div>

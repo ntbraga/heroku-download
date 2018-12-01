@@ -1,0 +1,22 @@
+.config {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: antiquewhite;
+    height: 100%;
+    width: 30%;
+    z-index: 96;
+}
+
+.arrow {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 97;
+}
+
+@media only screen and (max-width: 768px) {
+    .config {
+        width: 100%;
+    }
+}

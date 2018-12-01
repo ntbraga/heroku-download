@@ -1,0 +1,8 @@
+<div class="content">
+  <div class="title">{{download.value.serie}}</div>
+  <div>{{download.value.episode}}</div>
+  <div class="progress">
+    <span class="bar" [style.width.%]="download.value.progress.percent"></span>
+    <span class="text">{{download.value.progress.percent}}%</span>
+  </div>
+</div>

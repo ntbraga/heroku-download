@@ -1,0 +1,13 @@
+<div class="breadcrumb" [@openClose]="visible ? 'visible' : 'hidden'">
+  <div class="breadcrumb-content">
+    <div class="open-btn" (click)="visible = !visible">
+        <fa-icon [icon]="visible ? faChevronDown : faChevronUp"></fa-icon>
+    </div>
+    <div class="content">
+      <div *ngFor="let item of breadcrumb; index as i" class="crumb">
+        <span class="crumb-text">{{item.text}}</span>
+        <span *ngIf="(breadcrumb.length - 1) != i" class="separator">/</span>
+      </div>
+    </div>
+  </div>
+</div>

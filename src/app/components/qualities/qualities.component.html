@@ -1,0 +1,7 @@
+<div class="closeable">
+    <span class="close" (click)="closeEvent($event)">x</span>
+    <ul>
+      <li *ngFor="let download of language.downloads" [ngClass]="{ 'active' : selectedValues.selectedDownload != undefined && selectedValues.selectedDownload.id == download.id }"
+        (click)="emitSelected(download)">{{download.quality}}</li>
+    </ul>
+  </div>

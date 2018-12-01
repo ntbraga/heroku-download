@@ -1,0 +1,21 @@
+.queue {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: aliceblue;
+    height: 100%;
+    width: 50%;
+    z-index: 98;
+}
+
+.current {
+    width: 100%;
+    background-color: #3f51b5;
+    color: #FFF;
+}
+
+@media only screen and (max-width: 768px) {
+    .queue {
+        width: 100%;
+    }
+}

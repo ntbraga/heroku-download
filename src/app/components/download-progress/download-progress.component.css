@@ -1,0 +1,35 @@
+.content {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0px 10px 1px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.episode {
+    font-size: 20px;
+}
+
+.progress {
+    height: 20px;  /* Can be anything */
+    position: relative;
+    background: transparent;
+    border: 1px solid #FFF;
+}
+
+.progress > span.text {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.progress > span.bar {
+    display: block;
+    height: 100%;
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+}

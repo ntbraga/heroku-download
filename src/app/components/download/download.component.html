@@ -1,0 +1,21 @@
+<div class="container closeable">
+    <span class="close" (click)="closeEvent($event)">x</span>
+    <div class="centered">
+        <div class="title">{{download.serie}}</div>
+        <div class="episode">{{download.episode}}</div>
+
+        <div class="download-item">
+            <button (click)="downloadFile()">
+                <fa-icon [icon]="faDownload"></fa-icon>
+                Baixar
+            </button>
+        </div>
+
+        <div class="download-item">
+            <button (click)="openHere()">
+                <fa-icon [icon]="faPlus"></fa-icon>
+                Adicionar a fila
+            </button>
+        </div>
+    </div>
+</div>
