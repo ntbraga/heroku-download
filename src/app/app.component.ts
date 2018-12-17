@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NetcineService, Serie, Temporada, Episode } from './services/netcine.service';
-import { DomSanitizer } from '@angular/platform-browser';
 import { IdGenerator, enterAnimationRightToLeft } from './helpers/helpers';
 import { selectedValues } from './helpers/selecteds';
 import { faTasks, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -22,12 +21,10 @@ export class AppComponent implements OnInit {
   faTimes = faTimes;
   faSearch = faSearch;
 
-  constructor(private netcine: NetcineService, private sanitizer: DomSanitizer, private queue: QueueService) {
-    // sanitizer.bypassSecurityTrustUrl('http://p.netcine.us');
+  constructor(private netcine: NetcineService, private queue: QueueService) {
   }
 
   ngOnInit(): void {
-    // this.netcine.getEpisodePage().then((options) => this.options = options);
   }
 
   search() {

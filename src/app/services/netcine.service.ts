@@ -25,6 +25,7 @@ export class NetcineService {
   }
 
   public getPageAsDocument(page: string): Promise<Document> {
+    console.log(page);
     this.loading = true;
     return this.getPageAsText(page)
       .then((res: string) => {
