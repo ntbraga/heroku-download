@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   faSearch = faSearch;
 
   constructor(private netcine: NetcineService, private sanitizer: DomSanitizer, private queue: QueueService) {
-    sanitizer.bypassSecurityTrustUrl('http://p.netcine.us');
+    // sanitizer.bypassSecurityTrustUrl('http://p.netcine.us');
   }
 
   ngOnInit(): void {
